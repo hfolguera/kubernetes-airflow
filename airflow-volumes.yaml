@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: airflow-dags-pv
+  namespace: airflow
+spec:
+  storageClassName: airflow-dags-pv
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.1.11
+    path: "/volume2/NFS/homelab/airflow-volume/dags"
