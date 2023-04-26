@@ -13,6 +13,10 @@ helm repo add apache-airflow https://airflow.apache.org
 helm repo update
 helm search repo airflow
 ```
+2. Generate a Webserver secret
+```
+kubectl create secret generic my-webserver-secret --from-literal="webserver-secret-key=$(python3 -c 'import secrets; print(secrets.token_hex(16))')" -n airflow
+```
 
 3. Generate the values file
 ```
@@ -23,6 +27,8 @@ Customizations:
 - Use Kubernetes executor
 - Use LoadBalancer type for webserver service
 - Configure database connection data
+- Disable persistence
+- Use custom webserver secret
 
 4. Deploy airflow
 ```
