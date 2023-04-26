@@ -3,6 +3,10 @@ Repository to deploy Apache Airflow on kubernetes
 
 ## Installation
 
+Prior to deploy the Airflow chart, a running database must be deployed. Use the following repository to deploy a Postgres database:
+https://github.com/hfolguera/kubernetes-airflow-postgres
+
+
 1. Add the Aiflow helm repo
 ```
 helm repo add apache-airflow https://airflow.apache.org
