@@ -40,6 +40,7 @@ Customizations:
 - Disable persistence
 - Use custom webserver secret
 - Configure git-sync to load dags from repository
+- Expose Airflow configuration to webserver
 
 6. Deploy airflow
 ```
